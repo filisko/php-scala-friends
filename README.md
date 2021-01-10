@@ -1,5 +1,5 @@
-* ./bin/build.sh: build docker container with php7.4
-* ./bin/run.sh: runs MainCommand.php execute() function! do var_dumps() there
+* **./bin/build.sh**: build docker container with php7.4
+* **./bin/run.sh**: runs MainCommand.php execute() function! do var_dumps() there
 
 ```scala
 object CommandTrigger {
