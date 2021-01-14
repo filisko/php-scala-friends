@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App;
+namespace App\Example1;
 
-use App\CommandType\CliCommandType;
-use App\CommandType\CommandType;
+use App\Example1\CommandType\CliCommandType;
+use App\Example1\CommandType\CommandType;
 
 class Command
 {

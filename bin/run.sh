@@ -4,4 +4,4 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 readonly name="filis-scala-test"
 
-docker run -it --rm  -v "$DIR/../":/usr/src/myapp -w /usr/src/myapp $name php src/run.php
+docker run -it --rm  -v "$DIR/../":/usr/src/myapp -w /usr/src/myapp $name php src/run.php $@

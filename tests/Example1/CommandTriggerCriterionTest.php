@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\Example1;
 
-use App\Command;
-use App\CommandTriggerCriterion;
-use App\CommandType\AndroidCommandType;
+use App\Example1\Command;
+use App\Example1\CommandTriggerCriterion;
+use App\Example1\CommandType\AndroidCommandType;
 use PHPUnit\Framework\TestCase;
 
 class CommandTriggerCriterionTest extends TestCase
@@ -17,7 +17,6 @@ class CommandTriggerCriterionTest extends TestCase
 
         $result = $subject->performCriterionEvaluation(new Command('android', new AndroidCommandType()), 'android');
 
-        var_dump($result);
 //        $this->assertEquals(
 //            [
 //                new

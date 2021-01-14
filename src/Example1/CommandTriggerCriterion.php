@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App;
+namespace App\Example1;
 
-use App\CommandType\AndroidCommandType;
-use App\CommandType\CliCommandType;
+use App\Example1\CommandType\AndroidCommandType;
+use App\Example1\CommandType\CliCommandType;
 
 class CommandTriggerCriterion
 {

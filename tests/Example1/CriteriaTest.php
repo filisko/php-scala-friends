@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\Example1;
 
-use App\Command;
-use App\CommandTriggerCriterion;
-use App\Criteria;
+use App\Example1\Command;
+use App\Example1\Criteria;
 use PHPUnit\Framework\TestCase;
 
 class CriteriaTest extends TestCase

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\CommandType;
+namespace App\Example1\CommandType;
 
 class AndroidCommandType extends CommandType
 {

@@ -2,16 +2,24 @@
 
 declare(strict_types=1);
 
-namespace App;
+namespace App\Example1;
 
-use App\CommandType\AndroidCommandType;
+use App\Example1\CommandType\AndroidCommandType;
 use Symfony\Component\Console\Command\Command as SymfonyCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class MainCommand extends SymfonyCommand
 {
-    protected static $defaultName = 'app:run';
+    protected static $defaultName = 'example1';
+
+    protected function configure()
+    {
+        $this
+            // the short description shown while running "php bin/console list"
+            ->setDescription('Run Scala example 1')
+        ;
+    }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
