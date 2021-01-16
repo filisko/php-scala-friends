@@ -7,7 +7,7 @@ namespace App\Example2\Infrastructure;
 use App\Example2\Domain\Travel;
 use App\Example2\Domain\TravelRepository;
 
-class TravelRepositoryMysql implements TravelRepository
+class TravelRepositoryMysql extends TravelRepository
 {
     public function save(Travel $travel): Travel
     {
