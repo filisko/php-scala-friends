@@ -1,16 +1,16 @@
-Dependency injection
-```scala
+## Dependency injection
+
 // domain
 trait Travel
 trait Repository[A] {
   def save(a: A): A
 }
 // repository interface
-trait TravelRespository extends Repository[Travel]{
+trait TravelRepository extends Repository[Travel]{
   def save(t: Travel) : Travel
 }
 // a simple implementation
-class TravelRposiotryArangoDB extends TravelRespository {
+class TravelRepositoryArangoDB extends TravelRepository {
   def save(t: Travel): Travel = {
     val execute = s"Saving an travel ${t}"
     println(execute)
@@ -19,15 +19,15 @@ class TravelRposiotryArangoDB extends TravelRespository {
 }
 
 trait TravelService{
-  def createTravelRequest (from: String, to: String, tr: TravelRespository) : Travel
+  def createTravelRequest (from: String, to: String, tr: TravelRepository) : Travel
 }
 
 trait TravelServiceLifted{
-  def createTravelRequest (from: String, to: String) : TravelRespository => Travel
+  def createTravelRequest (from: String, to: String) : TravelRepository => Travel
 }
 
 object TravelServiceLiftedImp extends TravelServiceLifted{
-    def createTravelRequest (from: String, to: String) : TravelRespository => Travel = {
+    def createTravelRequest (from: String, to: String) : TravelRepository => Travel = {
       // tr is our dependency
       tr => {
         case class SimpleTravel(from: String, to: String) extends Travel
@@ -37,6 +37,5 @@ object TravelServiceLiftedImp extends TravelServiceLifted{
 }
 
 val aTravel = TravelServiceLiftedImp.createTravelRequest("Estepona","Malaga")
-val database: TravelRespository = new TravelRposiotryArangoDB()
+val database: TravelRepository = new TravelRepositoryArangoDB()
 println(aTravel)
-```

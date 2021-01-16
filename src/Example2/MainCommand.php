@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace App\Example2;
 
+use App\Example2\Domain\Travel;
+use App\Example2\Infrastructure\TravelRepositoryMysql;
+use App\Example2\Infrastructure\TravelServiceImpl;
 use Symfony\Component\Console\Command\Command as SymfonyCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -22,8 +25,14 @@ class MainCommand extends SymfonyCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $travel  = (new TravelServiceImpl)->createTravelRequest('Estepona', 'Málaga');
+        $database = new TravelRepositoryMysql();
 
-        var_dump(123);
+        dump($travel);
+        
+        $savedTravel = $travel($database);
+
+        dump($savedTravel);
 
         return SymfonyCommand::SUCCESS;
     }

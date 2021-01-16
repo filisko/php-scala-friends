@@ -26,7 +26,7 @@ class Criteria
      */
     public function __invoke(): array
     {
-
+        return [];
     }
 
     public function command(): Command

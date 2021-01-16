@@ -1,5 +1,5 @@
-FROM php:7.4-cli
-RUN pecl install xdebug-2.8.1 \
+FROM php:8.0-cli
+RUN pecl install xdebug-3.0.2 \
     && docker-php-ext-enable xdebug
 
 RUN apt-get update && apt-get install -y \
