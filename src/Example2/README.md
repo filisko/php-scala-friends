@@ -1,5 +1,6 @@
 ## Dependency injection
 
+```scala
 // domain
 trait Travel
 trait Repository[A] {
@@ -39,3 +40,4 @@ object TravelServiceLiftedImp extends TravelServiceLifted{
 val aTravel = TravelServiceLiftedImp.createTravelRequest("Estepona","Malaga")
 val database: TravelRepository = new TravelRepositoryArangoDB()
 println(aTravel)
+```
