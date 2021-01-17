@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Example2\Domain;
 
-class Travel
+class Travel implements Entity
 {
     public function __construct(private string $from, private string $to) {}
 
