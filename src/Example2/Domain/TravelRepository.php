@@ -6,5 +6,5 @@ namespace App\Example2\Domain;
 
 abstract class TravelRepository implements Repository
 {
-    public abstract function save(Travel $travel): Travel;
+    abstract public function save(Travel|Entity $travel): Travel;
 }
